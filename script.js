@@ -29,3 +29,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+  // Front-end RCM workflow animation: demonstrates activity without claiming live practice data.
+  const workflowStatus = document.getElementById("workflow-status");
+  const workflowTime = document.getElementById("workflow-time");
+  const claimsStatus = document.getElementById("claims-status");
+  const claimsSub = document.getElementById("claims-sub");
+  const arStatus = document.getElementById("ar-status");
+  const arSub = document.getElementById("ar-sub");
+  const denialStatus = document.getElementById("denial-status");
+  const denialSub = document.getElementById("denial-sub");
+  const reportStatus = document.getElementById("report-status");
+  const reportSub = document.getElementById("report-sub");
+
+  if(workflowStatus && workflowTime){
+    const activity = [
+      ["Reviewing claims","Processing","Claim review in progress","Active","Aging queue being reviewed","Tracked","Follow-up actions monitored","Monthly","Performance visibility"],
+      ["Checking eligibility","Verifying","Coverage check workflow","Active","Patient/coverage review","Monitored","Payer response tracking","Ready","Reporting queue"],
+      ["Working A/R","Submitted","Claims moving through workflow","Reviewing","A/R aging queue","Active","Denial follow-up in progress","Monthly","Performance visibility"],
+      ["Updating payment workflow","Posted","Payment activity recorded","Active","Outstanding A/R review","Tracked","Resolution actions monitored","Updated","Performance data refreshed"]
+    ];
+    let step = 0;
+    setInterval(() => {
+      const a = activity[step % activity.length];
+      workflowStatus.textContent = a[0];
+      claimsStatus.textContent = a[1];
+      claimsSub.textContent = a[2];
+      arStatus.textContent = a[3];
+      arSub.textContent = a[4];
+      denialStatus.textContent = a[5];
+      denialSub.textContent = a[6];
+      reportStatus.textContent = a[7];
+      reportSub.textContent = a[8];
+      workflowTime.textContent = "Updated just now";
+      step++;
+    }, 3200);
+  }

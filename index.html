@@ -40,15 +40,59 @@
    </div>
   </div>
   <div class="dashboard-card reveal">
-   <div class="dash-top"><div class="dash-title"><span class="dot"></span>RCM Performance Dashboard</div><span>Live workflow</span></div>
-   <div class="dash-grid">
-    <div class="metric"><small>Claims Workflow</small><strong>Active</strong></div>
-    <div class="metric"><small>A/R Review</small><strong>Focused</strong></div>
-    <div class="metric"><small>Denial Work</small><strong>Tracked</strong></div>
-    <div class="metric"><small>Reporting</small><strong>Monthly</strong></div>
+   <div class="dash-top">
+    <div class="dash-title"><span class="dot live-dot"></span>RCM Performance Dashboard</div>
+    <span class="live-pill"><span class="pulse"></span><span id="workflow-status">Live workflow</span></span>
    </div>
-   <div class="chart"></div>
+
+   <div class="dash-grid">
+    <div class="metric metric-live">
+      <small>Claims Workflow</small>
+      <strong id="claims-status">Processing</strong>
+      <span class="metric-sub" id="claims-sub">Claim review in progress</span>
+    </div>
+    <div class="metric metric-live">
+      <small>A/R Review</small>
+      <strong id="ar-status">Active</strong>
+      <span class="metric-sub" id="ar-sub">Aging queue being reviewed</span>
+    </div>
+    <div class="metric metric-live">
+      <small>Denial Work</small>
+      <strong id="denial-status">Tracked</strong>
+      <span class="metric-sub" id="denial-sub">Follow-up actions monitored</span>
+    </div>
+    <div class="metric metric-live">
+      <small>Reporting</small>
+      <strong id="report-status">Monthly</strong>
+      <span class="metric-sub" id="report-sub">Performance visibility</span>
+    </div>
+   </div>
+
+   <div class="workflow-panel">
+    <div class="workflow-head">
+      <span>Workflow activity</span>
+      <span id="workflow-time">Updating now</span>
+    </div>
+    <div class="workflow-track">
+      <div class="workflow-line"></div>
+      <div class="workflow-step active"><span>1</span><small>Verify</small></div>
+      <div class="workflow-step active"><span>2</span><small>Submit</small></div>
+      <div class="workflow-step active"><span>3</span><small>Post</small></div>
+      <div class="workflow-step"><span>4</span><small>Follow Up</small></div>
+      <div class="workflow-step"><span>5</span><small>Report</small></div>
+     </div>
+   </div>
+
+   <div class="chart">
+     <div class="chart-label">Revenue cycle activity</div>
+     <div class="chart-bars" aria-hidden="true">
+       <i style="--h:34%"></i><i style="--h:52%"></i><i style="--h:42%"></i><i style="--h:65%"></i>
+       <i class="accent-bar" style="--h:74%"></i><i style="--h:57%"></i>
+       <i class="accent-bar" style="--h:84%"></i><i style="--h:66%"></i><i class="accent-bar" style="--h:92%"></i>
+     </div>
+   </div>
   </div>
+</div>
  </div>
 </section>
 
@@ -169,6 +213,24 @@
 <div class="specialty reveal">Clinical Lab</div>
 <div class="specialty reveal">DME</div></div>
   <div class="actions" style="margin-top:28px"><a class="btn btn-primary" href="specialties.html">View All Specialties →</a></div>
+ </div>
+</section>
+
+
+<section class="founder-section">
+ <div class="container">
+  <div class="founder-card reveal">
+   <div class="founder-mark">“</div>
+   <div class="founder-copy">
+    <div class="kicker">Founder’s Message</div>
+    <h2>Healthcare deserves both <span>care and financial stability.</span></h2>
+    <blockquote>
+      “I believe healthcare providers should never have to choose between quality patient care and financial stability. At MEDTECH, we make sure they have both.”
+    </blockquote>
+    <div class="founder-name">— Hanan, Abdul</div>
+    <div class="founder-role">RCM Specialist & Revenue Cycle Management Professional</div>
+   </div>
+  </div>
  </div>
 </section>
 

@@ -113,3 +113,49 @@ footer{background:#041226;color:#9db0c7;padding:28px 0}.footer-inner{display:fle
  .field.full{grid-column:auto}.cta-inner,.footer-inner{flex-direction:column;align-items:flex-start}
  .dashboard-card{transform:none}
 }
+
+/* Animated RCM dashboard */
+.live-pill{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;background:#e9fbf8;color:#087f83;font-size:.72rem;font-weight:900;white-space:nowrap}
+.pulse{width:7px;height:7px;border-radius:50%;background:#13bfa8;box-shadow:0 0 0 0 rgba(19,191,168,.5);animation:pulse 1.7s infinite}
+.live-dot{animation:liveGlow 1.7s infinite}
+.metric-live{position:relative;overflow:hidden;cursor:pointer;transition:transform .28s ease,background .28s ease,border-color .28s ease,box-shadow .28s ease}
+.metric-live:before{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(20,121,255,.07),rgba(19,196,200,.10));opacity:0;transition:.28s}
+.metric-live:hover{transform:translateY(-8px) scale(1.025);background:#eefaff;border-color:#8bd9df;box-shadow:0 15px 30px rgba(20,121,255,.12)}
+.metric-live:hover:before{opacity:1}
+.metric-live strong,.metric-live small,.metric-sub{position:relative;z-index:1}
+.metric-live strong{transition:color .28s ease}
+.metric-live:hover strong{color:#087f83}
+.metric-sub{display:block;margin-top:4px;color:#8090a5;font-size:.68rem;font-weight:700;transition:.28s}
+.metric-live:hover .metric-sub{color:#397083}
+.workflow-panel{margin-top:12px;padding:15px 16px;border:1px solid var(--line);border-radius:17px;background:#fbfdff}
+.workflow-head{display:flex;justify-content:space-between;gap:10px;color:#65758b;font-size:.7rem;font-weight:800;margin-bottom:14px}
+.workflow-track{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;position:relative}
+.workflow-line{position:absolute;left:7%;right:7%;top:11px;height:2px;background:#dbe7f3;z-index:0}
+.workflow-step{position:relative;z-index:1;text-align:center}
+.workflow-step span{width:23px;height:23px;display:grid;place-items:center;margin:0 auto 6px;border-radius:50%;background:#e7eef7;color:#75869a;font-size:.68rem;font-weight:900;border:2px solid white;box-shadow:0 0 0 1px #dbe7f3;transition:.3s}
+.workflow-step.active span{background:var(--blue);color:white;box-shadow:0 0 0 4px rgba(20,121,255,.10)}
+.workflow-step small{font-size:.6rem;font-weight:800;color:#708097}
+.workflow-step.active small{color:var(--blue)}
+.chart{position:relative}
+.chart-label{position:absolute;left:15px;top:11px;color:#7a899d;font-size:.65rem;font-weight:800;z-index:2}
+.chart-bars{position:absolute;left:18px;right:18px;bottom:15px;top:34px;display:flex;align-items:flex-end;gap:8px}
+.chart-bars i{display:block;flex:1;height:var(--h);min-height:8px;background:#dfe8f2;border-radius:5px 5px 2px 2px;animation:barPulse 2.6s ease-in-out infinite;animation-delay:calc(var(--h) * -10ms)}
+.chart-bars i.accent-bar{background:linear-gradient(180deg,#13c4c8,#1479ff)}
+.founder-section{background:white;padding-top:30px}
+.founder-card{position:relative;display:grid;grid-template-columns:110px 1fr;gap:25px;align-items:center;padding:45px 50px;border-radius:28px;background:linear-gradient(135deg,#eef7ff,#f9ffff);border:1px solid var(--line);box-shadow:var(--shadow);overflow:hidden}
+.founder-card:after{content:"";position:absolute;width:250px;height:250px;right:-90px;top:-100px;border-radius:50%;background:rgba(19,196,200,.10)}
+.founder-mark{font-size:7rem;line-height:.8;color:var(--blue);font-family:Georgia,serif;font-weight:900;opacity:.75;position:relative;z-index:1}
+.founder-copy{position:relative;z-index:1}
+.founder-copy h2{margin-bottom:18px}.founder-copy h2 span{color:var(--blue)}
+.founder-copy blockquote{font-size:1.18rem;line-height:1.8;color:#52657c;font-style:italic;max-width:850px}
+.founder-name{margin-top:18px;color:var(--navy);font-weight:900}
+.founder-role{color:var(--blue);font-size:.88rem;font-weight:800;margin-top:2px}
+@keyframes pulse{0%{box-shadow:0 0 0 0 rgba(19,191,168,.45)}70%{box-shadow:0 0 0 7px rgba(19,191,168,0)}100%{box-shadow:0 0 0 0 rgba(19,191,168,0)}}
+@keyframes liveGlow{50%{transform:scale(1.2);filter:brightness(1.15)}}
+@keyframes barPulse{0%,100%{transform:scaleY(1)}50%{transform:scaleY(.88)}}
+@media(max-width:600px){
+ .founder-card{grid-template-columns:1fr;padding:30px}
+ .founder-mark{font-size:5rem}
+ .workflow-track{gap:3px}.workflow-step small{font-size:.52rem}
+ .chart-bars{gap:5px}
+}
